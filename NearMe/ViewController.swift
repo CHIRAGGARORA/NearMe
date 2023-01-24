@@ -24,6 +24,7 @@ class ViewController: UIViewController {
        
         let searchtextField = UITextField()
         searchtextField.layer.cornerRadius = 10
+        searchtextField.delegate = self
         searchtextField.clipsToBounds = true
         searchtextField.backgroundColor = UIColor.white
         searchtextField.placeholder = "Search"
@@ -108,9 +109,46 @@ class ViewController: UIViewController {
             
        
         }
+        
+    }
+    
+    private func findNearbyPlaces(by query: String) {
+        
+        // clear all annotations
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            
+            guard let response = response, error == nil else { return }
+            print(response.mapItems)
+            
+            
+        }
+        
     }
 
 
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let text = textField.text ?? ""
+        if !text.isEmpty {
+            textField.resignFirstResponder()
+            // find nearby places
+            findNearbyPlaces(by: text)
+            
+        }
+        
+        return true
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
