@@ -64,6 +64,25 @@ class PlaceDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func directionsButtonTapped(_ sender: UIButton) {
+        
+        let coordinate = place.location.coordinate
+        guard let url = URL(string: "http://maps.apple.com/?daddr=\(coordinate.latitude),\(coordinate.longitude)") else { return }
+        
+        UIApplication.shared.open(url)
+        
+    }
+    
+    @objc func callButtonTapped(_ sender: UIButton) {
+        
+        // place.phone = with spaces =  981-345-456
+        // we need without spaces =  981345456
+        guard  let url = URL(string: "tel://\(place.phone.formatPhoneForCall)") else { return }
+        UIApplication.shared.open(url)
+        
+        
+    }
+    
     private func setUpUI() {
         
         let stackView = UIStackView()
@@ -77,8 +96,8 @@ class PlaceDetailViewController: UIViewController {
         nameLabel.text = place.name
         addressLabel.text = place.address
         
-        stackView.addSubview(nameLabel)
-        stackView.addSubview(addressLabel)
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(addressLabel)
         
         nameLabel.widthAnchor.constraint(equalToConstant: view.bounds.width - 20).isActive = true
         
@@ -86,6 +105,10 @@ class PlaceDetailViewController: UIViewController {
         contactStackView.translatesAutoresizingMaskIntoConstraints = false
         contactStackView.axis = .horizontal
         contactStackView.spacing = UIStackView.spacingUseSystem
+        
+        directionsButton.addTarget(self, action: #selector(directionsButtonTapped), for: .touchUpInside)
+        
+        callButton.addTarget(self, action: #selector(callButtonTapped), for: .touchUpInside)
         
         contactStackView.addArrangedSubview(directionsButton)
         contactStackView.addArrangedSubview(callButton)
