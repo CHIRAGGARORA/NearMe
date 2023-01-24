@@ -10,6 +10,7 @@
 		E2086E0D297FEA1C001AD899 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086E0C297FEA1C001AD899 /* PlaceAnnotation.swift */; };
 		E2086E10297FEBF4001AD899 /* CLLocation+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086E0F297FEBF4001AD899 /* CLLocation+Extensions .swift */; };
 		E2086E13298034B1001AD899 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086E12298034B1001AD899 /* PlacesTableViewController.swift */; };
+		E2086E1529804EF9001AD899 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086E1429804EF9001AD899 /* PlaceDetailViewController.swift */; };
 		E2CC51832976497E0023ECA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC51822976497E0023ECA6 /* AppDelegate.swift */; };
 		E2CC51852976497E0023ECA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC51842976497E0023ECA6 /* SceneDelegate.swift */; };
 		E2CC51872976497E0023ECA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC51862976497E0023ECA6 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		E2086E0C297FEA1C001AD899 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		E2086E0F297FEBF4001AD899 /* CLLocation+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions .swift"; sourceTree = "<group>"; };
 		E2086E12298034B1001AD899 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
+		E2086E1429804EF9001AD899 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		E2CC517F2976497E0023ECA6 /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CC51822976497E0023ECA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CC51842976497E0023ECA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				E2086E12298034B1001AD899 /* PlacesTableViewController.swift */,
+				E2086E1429804EF9001AD899 /* PlaceDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				E2086E0D297FEA1C001AD899 /* PlaceAnnotation.swift in Sources */,
 				E2086E10297FEBF4001AD899 /* CLLocation+Extensions .swift in Sources */,
+				E2086E1529804EF9001AD899 /* PlaceDetailViewController.swift in Sources */,
 				E2CC51872976497E0023ECA6 /* ViewController.swift in Sources */,
 				E2CC51832976497E0023ECA6 /* AppDelegate.swift in Sources */,
 				E2CC51852976497E0023ECA6 /* SceneDelegate.swift in Sources */,
